@@ -12,9 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 public class NestedBean {
 
-    @Transactional(propagation = Propagation.NESTED)
+    @Transactional(propagation = Propagation.REQUIRED)
     public void nest() {
         System.out.println("嵌套事务");
+        throw new RuntimeException("rollback");
     }
 
 }

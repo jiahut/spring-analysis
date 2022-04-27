@@ -1,0 +1,17 @@
+{
+	"java.jdt.ls.java.home": "/usr/local/sdkman/candidates/java/17.0.2.8.1-amzn",
+	// "java.configuration.runtimes": [
+	// 	{
+	// 		"name": "JavaSE-1.8",
+	// 		"path": "/usr/local/sdkman/candidates/java/8.0.302-open"
+	// 	}
+	// ],
+	// "maven.terminal.useJavaHome": false,
+	// "maven.terminal.customEnv": [
+	// 	{
+	// 		// https://github.com/microsoft/vscode-maven/issues/765
+	// 		"environmentVariable": "JAVA_HOME",
+	// 		"value": "/usr/local/sdkman/candidates/java/8.0.302-open"
+	// 	}, 
+	// ],
+}

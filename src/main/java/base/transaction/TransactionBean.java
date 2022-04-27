@@ -1,5 +1,6 @@
 package base.transaction;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,20 +13,18 @@ import org.springframework.transaction.annotation.Transactional;
 @Component
 public class TransactionBean {
 
-    public NestedBean getNestedBean() {
-        return nestedBean;
-    }
-
-    public void setNestedBean(NestedBean nestedBean) {
-        this.nestedBean = nestedBean;
-    }
-
+    @Autowired
     private NestedBean nestedBean;
 
     @Transactional(propagation = Propagation.REQUIRED)
     public void process() {
-        System.out.println("事务执行");
-        nestedBean.nest();
+        System.out.println("父亲嵌套事务开始执行");
+        try {
+            nestedBean.nest();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("父亲嵌套事务结束执行");
     }
 
 }
